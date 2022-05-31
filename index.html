@@ -44,7 +44,16 @@ background-color: #f8f8f8;">
         
     </div>
     <script>
-        function getPassword() 
+        function getPassword(){ 
+            async() =>{
+            await fetch("https://6raevrh14j.execute-api.us-east-1.amazonaws.com/prod")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('password').value = password
+                })
+            }
+        }
+        /*function getPassword() 
         {
             var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ!@#$%^&*()+?><:{}[]";
             var passwordLength = 16;
@@ -55,7 +64,7 @@ background-color: #f8f8f8;">
                 password += chars.substring(randomNumber, randomNumber + 1);
             }
             document.getElementById('password').value = password
-        }
+        }*/
     </script>
 </body>
 </html>
